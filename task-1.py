@@ -1,5 +1,5 @@
 const_array = [1, 2, 3, 1, 2, 1, 2, 3]
-n_value = 3
+n_value = 2
 let_array = []
 
 

@@ -1,7 +1,7 @@
 # There are three types of logical operators in python  : and , or , not
 high_income = True
 good_credit = False
-student = True
+student = False
 
 # Short circuit evaluation
 #     True           False               True

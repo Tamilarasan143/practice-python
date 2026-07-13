@@ -10,5 +10,6 @@ else:
 # Nested Loop
 
 for x in range(3):
+    print(f"Outer loop: {x}")
     for y in range(2):
         print(f"{x} : {y}")

@@ -2,7 +2,7 @@ name = "Tamil"
 age = 24
 print("type(name)", type(name))
 # if else condition
-if type(name) == "str":
+if type(name) is str:
     print("the type of name is string")
 else:
     print("the type of name is unknown")

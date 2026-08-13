@@ -68,3 +68,22 @@ def get_employees(**args):
 
 get_employees(**employee)
 get_employees(**employee1)
+
+
+# lambda
+
+employees = [
+    {"name": "Tamil", "salary": 1200000},
+    {"name": "John", "salary": 1800000},
+    {"name": "Alice", "salary": 1500000},
+    {"name": "Bob", "salary": 900000},
+]
+value = sorted(employees,key=lambda employee: employee["salary"])
+print("map")
+print(list(map(lambda employee: employee["name"] ,value)))
+print("filter")
+print({employee["name"] for employee in employees if employee["salary"] > 1000000})
+print(list(filter(lambda employee: employee["name"] if employee["salary"] < 1000000 else None,value)))
+
+print("map + filter")
+print(list(map(lambda employee: employee["name"],filter(lambda employee: employee["salary"] > 1000000,value))))

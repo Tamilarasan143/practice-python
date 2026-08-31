@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Tamil",
+        "salary": 1200000,
+        "experience": 3.5,
+        "skills": [
+            "React",
+            "Python",
+            "FastAPI"
+        ]
+    },
+    {
+        "name": "Jhonathan",
+        "salary": 1200000,
+        "experience": 3.5,
+        "skills": [
+            "React",
+            "Python",
+            "FastAPI"
+        ]
+    },
+    {
+        "name": "Alice",
+        "salary": 1200000,
+        "experience": 3.5,
+        "skills": [
+            "React",
+            "Python",
+            "FastAPI"
+        ]
+    }
+]

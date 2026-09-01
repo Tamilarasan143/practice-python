@@ -87,3 +87,4 @@ print(list(filter(lambda employee: employee["name"] if employee["salary"] < 1000
 
 print("map + filter")
 print(list(map(lambda employee: employee["name"],filter(lambda employee: employee["salary"] > 1000000,value))))
+

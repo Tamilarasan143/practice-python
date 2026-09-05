@@ -1,28 +1,37 @@
+from dataclasses import dataclass
+from enum import Enum
+from composition import Department
+class EmployeeRole(Enum):
+    DEVELOPER = "Developer"
+    MANAGER = "Manager"
+    TRAINEE = "Trainee"
 
+@dataclass
 class Employee:
+    name: str
+    salary:float
+    role:EmployeeRole
+    department: Department
     company = "Lumel Technologies"
-    def __init__(self,name,salary,role):
-        self.name = name
-        self.salary = salary
-        self.role = role
 
     def get_employee_detail(self):
-        return f"{self.name} + {self.salary} + {self.role}"
+        return f"{self.name} + {self.salary} + {self.role.value}"
     @classmethod
     def get_company(cls):
       return cls.company
     @classmethod
     def change_company(cls,new_company):
         cls.company = new_company
-
+    @staticmethod
     def validate_employee_salary(salary):
         return salary >0
     def give_raise(self,amount):
         self.salary += amount
 if  __name__ == "__main__":
- employee = Employee("tamil",12000,"hello")
- employee_john = Employee("john",10000,"yes")
- print(employee.get_employee_detail())
+ department = Department("IT")
+ employee = Employee("tamil",12000,EmployeeRole.DEVELOPER,department)
+ employee_john = Employee("john",10000,EmployeeRole.MANAGER,department)
+ print(employee)
  print(employee.give_raise(2000))
  print(employee.get_employee_detail())
  print(employee.get_company())

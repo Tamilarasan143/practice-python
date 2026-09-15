@@ -1,3 +1,4 @@
+import enum
 numbers = [10,10 ,20 , 20  , 5]      
 
 
@@ -74,8 +75,39 @@ def find_missing_number(numbers: list[int]) -> int:
 
     return expected_sum - actual_sum
             
+def group_anagrams(words: list[str]) -> list[list[str]]:
+    groups= {}
+    for word in words:
+        key = "".join(sorted(word))
+        if key in groups:
+            groups[key].append(word)
+        else:
+            groups[key] = [word]
+    return list(groups.values())
 
-      
+def reverse_array(numbers: list[int]) -> list[int]:
+    left = 0
+    right = len(numbers) - 1
+
+    while left < right:
+       numbers[left] , numbers[right] = numbers[right] , numbers[left]
+       left += 1
+       right -= 1
+
+    return numbers
+def is_palindrome(numbers: list[int]) -> bool:
+   left = 0
+   right = len(numbers) - 1
+
+   while left < right:
+
+    if numbers[left] != numbers[right]:
+        return False
+
+    left += 1
+    right -= 1
+
+   return True
 if __name__ == "__main__":
  print("Max Element",find_max_element(numbers))
  print("Second largest Element",find_second_largest(numbers))
@@ -83,5 +115,7 @@ if __name__ == "__main__":
  print("Target Element counter",count_occurrences(numbers,10))
  print("Find first Element" , find_first_duplicate(numbers))
  print("Remove duplicates and return unique",remove_duplicates(numbers))
-#  print("Missing patten Number",find_missing_number([1,2,3,5]))
-find_missing_number([1,2,3,5])
+ print("Missing patten Number",find_missing_number([1,2,3,5]))
+ print("Group by words",group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+ print("Reverse Array", reverse_array([1,2,3,4,5]))
+ print("is_palindrome", is_palindrome([1, 2, 3, 2, 1]))

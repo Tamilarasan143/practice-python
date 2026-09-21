@@ -56,9 +56,27 @@ def two_sum(numbers: list[int], target: int) -> list[int]:
         else:
             sum_map[number] = index
 
+def has_pair_with_sum(numbers: list[int], target: int) -> bool:
+    left = 0
+    right = len(numbers) - 1
+
+    while left < right:
+        current_sum = numbers[left] + numbers[right]
+
+        if current_sum == target:
+            return True
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+
+    return False
+
+
 if __name__ == "__main__":
   print("Count Frequency",count_frequency(numbers))
   print("Most Frequency element",find_most_frequent(numbers))
   print("first Non Frequency element",find_first_non_repeating(numbers))
   print("fits Frequency element",find_first_repeating(numbers))
   print("two sum",two_sum([7, 11, 15,2],9))
+  print("has_pair_with_sum",has_pair_with_sum([1, 2, 3, 4, 6, 8, 9],11))

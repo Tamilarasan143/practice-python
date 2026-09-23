@@ -1,3 +1,4 @@
+from os import PRIO_PGRP
 import enum
 numbers = [10,10 ,20 , 20  , 5]      
 
@@ -191,7 +192,10 @@ def build_prefix_sum(numbers: list[int]) -> list[int]:
      prefix.append(prefix[-1] + number)
 
     return prefix
-
+def range_sum(prefix: list[int], left: int, right: int) -> int:
+    print(prefix[right])
+    print(prefix[left])
+    return prefix[right + 1] - prefix[left]
 #def range_sum(prefix: list[int], left: int, right: int) -> int:
 if __name__ == "__main__":
  print("Max Element",find_max_element(numbers))
@@ -210,3 +214,4 @@ if __name__ == "__main__":
  print("min_subarray_length",min_subarray_length([2, 3, 1, 2, 4, 3], 7))
  print("longest_two_distinct",longest_two_distinct([1,2,1,2,3]))
  print("build_prefix_sum",build_prefix_sum([2, 4, 1, 5, 3]))
+ print("range sum",range_sum([0, 2, 6, 7, 12, 15],1,4))
